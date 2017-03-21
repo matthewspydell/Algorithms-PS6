@@ -11,17 +11,22 @@ function a = extractAlignment(S,x,y)
     disp('Trace back coordinates')
     fprintf('i = %d    j = %d\n', i, j);
     
+    % trace back path until the path hits the edge of the table
     while (i>1 && j>1)
         [a(end+1), i, j] = determineOptimalOp(S, i, j, x, y);
         fprintf('i = %d    j = %d\n', i, j);
+    end
     disp('finished while loop')
-    if (i>0)
+    
+    % if i and j are greater than one inser indels until path reaches
+    % origin of the table
+    if (i>1)
         for k = 1:i-1
             fprintf('i = %d    j = %d\n', i-k, j);
             a(end+1) = 'i';
         end
     end
-    if (j>0)
+    if (j>1)
         for k = 1:j-1
             fprintf('i = %d    j = %d\n', 0, j-k);
             a(end+1) = 'd';
