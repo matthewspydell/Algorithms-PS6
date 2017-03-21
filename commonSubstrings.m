@@ -1,7 +1,7 @@
-function  = commonSubstrings(x, L, a)
+function substring = commonSubstrings(x, L, a)
   i = 1;
-  while (a(i) != '|') {
+  while (a(i) ~= '|')
     
-  }
+  end
 
 end
