@@ -4,7 +4,7 @@ function substrings = commonSubstrings(x, L, a)
   indicator = 0;
   L_count = 0;
   
-  %Increment through a, looking for a no-op character
+  %Index through a, looking for a no-op character
   for i = 1:length(a)
       if (a(i) == '|')
         L_count = L_count + 1; %Increment the count of no-ops
